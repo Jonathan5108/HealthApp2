@@ -1,8 +1,19 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">myapplication</string>
     <string name="search">search</string>
     <string name="servings">Servings:</string>
     <string name="enter_food_item">Enter food item</string>
     <string name="add">add</string>
     <string name="meal">Meal:</string>
+    <string name="amount">amount</string>
+    <string name="select">select</string>
+    <string name="log_item">Log item</string>
+    <string name="todays_items">Today\'s Items</string>
+    <string name="my_plan">My Plan</string>
+    <string-array name="meals_dropdown">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Snack</item>
+    </string-array>
 </resources>

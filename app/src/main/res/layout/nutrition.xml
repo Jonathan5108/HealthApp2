@@ -15,23 +15,30 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
             android:text="@string/enter_food_item"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
-        <EditText
+        <SearchView
             android:id="@+id/editSearch"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="60dp"
+            android:layout_marginStart="20dp"
             android:layout_below="@+id/textView"
             android:text="@string/search" />
 
         <TextView
             android:id="@+id/servingView"
-            android:layout_width="200dp"
+            android:layout_width="100dp"
             android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:gravity="center_vertical"
             android:layout_below="@+id/editSearch"
             android:text="@string/servings"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <EditText
@@ -40,30 +47,76 @@
             android:layout_height="50dp"
             android:layout_below="@+id/editSearch"
             android:layout_toEndOf="@+id/servingView"
-            android:text="amount" />
+            android:text="@string/amount"
+            android:scrollbars="vertical"/>
+
 
         <TextView
             android:id="@+id/mealView"
-            android:layout_width="200dp"
+            android:layout_width="100dp"
             android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:gravity="center_vertical"
             android:text="@string/meal"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_below="@id/servingView" />
-
+<!--
         <EditText
             android:id="@+id/editMeal"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_below="@+id/editServing"
             android:layout_toEndOf="@+id/mealView"
-            android:text="select" />
+            android:text="@string/select" />
+-->
+        <Spinner
+            android:id="@+id/spinnerMeal"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/editServing"
+            android:layout_toEndOf="@+id/mealView"
+            android:spinnerMode="dropdown"/>
 
         <Button
             android:id="@+id/add"
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
             android:layout_below="@+id/mealView"
-            android:text="Log item" />
+            android:text="@string/log_item" />
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/todays_items"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/plan"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/add"
+            android:layout_marginStart="55dp"
+            android:layout_toEndOf="@+id/textView2"
+            android:text="@string/my_plan" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"/>
+
+        <!--
+        spinner needs
+        -->
 
 
     </RelativeLayout>

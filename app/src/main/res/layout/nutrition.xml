@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/idRLContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="@string/enter_food_item"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editSearch"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView"
+            android:text="@string/search" />
+
+        <TextView
+            android:id="@+id/servingView"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/editSearch"
+            android:text="@string/servings"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editServing"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/editSearch"
+            android:layout_toEndOf="@+id/servingView"
+            android:text="amount" />
+
+        <TextView
+            android:id="@+id/mealView"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="@string/meal"
+            android:textStyle="bold"
+            android:layout_below="@id/servingView" />
+
+        <EditText
+            android:id="@+id/editMeal"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/editServing"
+            android:layout_toEndOf="@+id/mealView"
+            android:text="select" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/mealView"
+            android:text="Log item" />
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

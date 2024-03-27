@@ -16,4 +16,9 @@
         <item>Dinner</item>
         <item>Snack</item>
     </string-array>
+    <string name="enter_exercise">Enter exercise:</string>
+    <string name="time">Time (minutes)</string>
+    <string name="cals">Calories burned (optional)</string>
+    <string name="today">Today:</string>
+    <string name="my_exercise_plan">My Exercise Plan</string>
 </resources>

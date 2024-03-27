@@ -1,6 +1,5 @@
 package com.example.myapplication
 
-import android.R
 import android.os.Bundle
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +14,7 @@ import android.widget.ImageButton
 import android.widget.Toast
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.viewpager.widget.ViewPager
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,11 +34,10 @@ class MainActivity : AppCompatActivity() {
         updateProgressBar1()
         updateProgressBar2()
 
-        var tab_viewpager = findViewById<ViewPager>(R.id.viewPager)
-        var tab_tablayout = findViewById<TabLayout>(R.id.tabbyCat)
-        setupViewPager(tab_viewpager)
-        tab_tablayout.setupWithViewPager(tab_viewpager)
-
+        val tabViewpager = findViewById<ViewPager>(R.id.viewPager)
+        val tab_tablayout = findViewById<TabLayout>(R.id.tabbyCat)
+        setupViewPager(tabViewpager)
+        tab_tablayout.setupWithViewPager(tabViewpager)
 
 
     }
@@ -60,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         // is a title of tab
         adapter.addFragment(NutritionFragment(), "Nutrition")
         adapter.addFragment(HomeFragment(), "Home")
-        adapter.addFragment(ExcerciseFragment(), "Exercise")
+        adapter.addFragment(ExerciseFragment(), "Exercise")
         adapter.addFragment(ProgressFragment(), "Progress")
 
         // setting adapter to view pager.
@@ -103,5 +102,4 @@ class MainActivity : AppCompatActivity() {
 
 
 }
-
 

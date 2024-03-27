@@ -81,7 +81,7 @@
     -->
             <Spinner
                 android:id="@+id/spinnerMeal"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_below="@+id/editServing"
                 android:layout_toEndOf="@+id/mealView"

@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">myapplication</string>
     <string name="search">search</string>
-    <string name="servings">Servings:</string>
+    <string name="servings">Servings</string>
     <string name="enter_food_item">Enter food item</string>
     <string name="add">add</string>
-    <string name="meal">Meal:</string>
+    <string name="meal">Meal</string>
     <string name="amount">amount</string>
     <string name="select">select</string>
     <string name="log_item">Log item</string>
-    <string name="todays_items">Today\'s Items</string>
-    <string name="my_plan">My Plan</string>
+    <string name="todays_items">Today</string>
+    <string name="my_plan">My Nutrition Plan</string>
     <string-array name="meals_dropdown">
         <item>Breakfast</item>
         <item>Lunch</item>
@@ -21,4 +21,8 @@
     <string name="cals">Calories burned (optional)</string>
     <string name="today">Today:</string>
     <string name="my_exercise_plan">My Exercise Plan</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="dinner">Dinner</string>
+    <string name="snacks">Snacks</string>
 </resources>

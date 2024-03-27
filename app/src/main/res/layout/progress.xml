@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/goalText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="10dp"
+        android:text="Target Weight"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabbyCat" />
+
+    <TextView
+        android:id="@+id/goalNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:text="180 LBS"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goalText2" />
+
+    <TextView
+        android:id="@+id/ProfHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ProfileEdit"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileText"
+        tools:text="Height" />
+
+    <TextView
+        android:id="@+id/ProfWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ProfileEdit"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileText"
+        tools:text="Weight" />
+
+    <TextView
+        android:id="@+id/ProfSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ProfileEdit"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileText"
+        tools:text="Sex" />
+
+    <TextView
+        android:id="@+id/ProfActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="162dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ProfileEdit"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileText"
+        tools:text="Activity Level" />
+
+    <Button
+        android:id="@+id/ProfileEdit"
+        android:layout_width="92dp"
+        android:layout_height="42dp"
+        android:layout_below="@+id/mealView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:translationY="4sp"
+        app:layout_constraintStart_toEndOf="@+id/ProfileText"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Edit" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabbyCat"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/HomeTabP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/NutritionTabP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nutrition"
+            android:visibility="visible" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/ExerciseTabP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exercise" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/ProgressTabP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Progress" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <TextView
+        android:id="@+id/ProfileText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="68dp"
+        android:text="My Profile"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ProfAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ProfileEdit"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileText"
+        tools:text="Age" />
+
+    <TextView
+        android:id="@+id/ProfName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="113dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ProfileEdit"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Name" />
+
+    <TextView
+        android:id="@+id/UserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="113dp"
+        android:text="John"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ProfileText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="42dp"
+        android:text="24"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ProfileText"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileText" />
+
+    <TextView
+        android:id="@+id/userHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
+        android:text="6' 2''"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ProfileText"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileText" />
+
+    <TextView
+        android:id="@+id/userWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="102dp"
+        android:text="188 lbs"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ProfileText"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileText" />
+
+    <TextView
+        android:id="@+id/userSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="132dp"
+        android:text="Male"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ProfileText"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileText" />
+
+    <TextView
+        android:id="@+id/userActivityLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="162dp"
+        android:text="Casual"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ProfileText"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileText" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/weekMonthYear"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fitnessPlanText">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/weekTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Week" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/monthTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Month" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/yearTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/dayTabs"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weekMonthYear">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/MondayTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="M" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/TuesdayTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="T" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/WednesdayTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="W" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/ThursdayTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Th" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/FridayTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="F" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/SaturdayTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sa" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/SundayTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Su" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <ListView
+        android:id="@+id/exerciseList"
+        android:layout_width="409dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dayTabs" />
+
+    <TextView
+        android:id="@+id/fitnessPlanText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="310dp"
+        android:text="My Fitness Plan"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/statsProfileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="260dp"
+        android:text="My Stats"
+        app:layout_constraintStart_toEndOf="@+id/fitnessPlanText"
+        app:layout_constraintTop_toBottomOf="@+id/tabbyCat" />
+
+    <TextView
+        android:id="@+id/enterGoalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:text="Enter New Goal:"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseList" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="293dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterGoalText"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Spinner
+        android:id="@+id/timeDropdown"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:entries="@array/time_entries"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/searchView" />
+
+    <Button
+        android:id="@+id/addGoalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="Add Goal"
+        android:translationY="2sp"
+        app:layout_constraintStart_toEndOf="@+id/enterGoalText"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseList" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

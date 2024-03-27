@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_exercise"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <SearchView
+            android:id="@+id/editSearch"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView"
+            android:text="@string/search" />
+
+        <TextView
+            android:id="@+id/servingView"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/editSearch"
+            android:text="@string/time"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/editSearch"
+            android:layout_toEndOf="@+id/servingView"
+            android:spinnerMode="dropdown"/>
+
+
+        <TextView
+            android:id="@+id/mealView"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="@string/cals"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_below="@id/servingView" />
+
+
+        <EditText
+            android:id="@+id/editServing"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/spinner"
+            android:layout_toEndOf="@+id/mealView"
+            android:scrollbars="vertical"/>
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="28sp"
+            android:layout_below="@+id/mealView"
+            android:text="@string/log_item" />
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add"
+            android:text="@string/today"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/plan"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_below="@id/add"
+            android:layout_toEndOf="@id/textView2"
+            android:text="@string/my_exercise_plan" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/plan"
+            android:layout_marginTop="10dp">
+            <TableRow>
+                <TextView
+                    android:layout_width="100dp"
+                    android:text="Exercise"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="100dp"
+                    android:text="Duration"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:text="Calories Burned"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Item 1"
+                    android:textSize="20sp" />
+                <TextView
+                    android:text="40 mins"
+                    android:textSize="20sp" />
+                <TextView
+                    android:text="100"
+                    android:textSize="20sp" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Item 2"
+                    android:textSize="20sp" />
+                <TextView
+                    android:text="30 mins"
+                    android:textSize="20sp" />
+                <TextView
+                    android:text="60"
+                    android:textSize="20sp" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Item 3"
+                    android:textSize="20sp" />
+                <TextView
+                    android:text="120 mins"
+                    android:textSize="20sp" />
+                <TextView
+                    android:text="220"
+                    android:textSize="20sp" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Item 4"
+                    android:textSize="20sp" />
+                <TextView
+                    android:text="60 mins"
+                    android:textSize="20sp" />
+                <TextView
+                    android:text="130"
+                    android:textSize="20sp" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Item 5"
+                    android:textSize="20sp" />
+                <TextView
+                    android:text="20 mins"
+                    android:textSize="20sp" />
+                <TextView
+                    android:text="10"
+                    android:textSize="20sp" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Total"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:text="4h. 30m."
+                    android:textSize="20sp" />
+                <TextView
+                    android:text="520"
+                    android:textSize="20sp" />
+            </TableRow>
+        </TableLayout>
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

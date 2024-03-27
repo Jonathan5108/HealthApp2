@@ -2,6 +2,6 @@ package com.example.myapplication
 
 import androidx.fragment.app.Fragment
 
-class ProgressFragment : Fragment() {
+class ExerciseFragment : Fragment() {
 
 }

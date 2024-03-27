@@ -25,7 +25,7 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginStart="20dp"
                 android:text="@string/enter_food_item"
                 android:textSize="20sp"

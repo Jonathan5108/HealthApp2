@@ -2,13 +2,13 @@
     <string name="app_name">myapplication</string>
     <string name="search">search</string>
     <string name="servings">Servings</string>
-    <string name="enter_food_item">Enter food item</string>
+    <string name="enter_food_item">Enter food item:</string>
     <string name="add">add</string>
     <string name="meal">Meal</string>
     <string name="amount">amount</string>
     <string name="select">select</string>
     <string name="log_item">Log item</string>
-    <string name="todays_items">Today</string>
+    <string name="todays_items">Today:</string>
     <string name="my_plan">My Nutrition Plan</string>
     <string-array name="meals_dropdown">
         <item>Breakfast</item>

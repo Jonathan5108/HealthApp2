@@ -25,4 +25,10 @@
     <string name="lunch">Lunch</string>
     <string name="dinner">Dinner</string>
     <string name="snacks">Snacks</string>
+    <string-array name="time_entries">
+        <item>15 min</item>
+        <item>30 min</item>
+        <item>45 min</item>
+        <item>1 hr</item>
+    </string-array>
 </resources>

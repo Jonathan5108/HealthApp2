@@ -63,19 +63,17 @@ class MainActivity : AppCompatActivity() {
         adapter.addFragment(ProgressFragment(), "Progress")
 
         // setting adapter to view pager.
-        viewpager.setAdapter(adapter)
+        viewpager.adapter = adapter
     }
 
-    class ViewPagerAdapter : FragmentPagerAdapter {
+    class ViewPagerAdapter// this is a secondary constructor of ViewPagerAdapter class.
+    public constructor(supportFragmentManager: FragmentManager) :
+        FragmentPagerAdapter(supportFragmentManager) {
 
         // objects of arraylist. One is of Fragment type and
         // another one is of String type.*/
         private final var fragmentList1: ArrayList<Fragment> = ArrayList()
         private final var fragmentTitleList1: ArrayList<String> = ArrayList()
-
-        // this is a secondary constructor of ViewPagerAdapter class.
-        public constructor(supportFragmentManager: FragmentManager)
-                : super(supportFragmentManager)
 
         // returns which item is selected from arraylist of fragments.
         override fun getItem(position: Int): Fragment {

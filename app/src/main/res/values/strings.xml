@@ -25,10 +25,13 @@
     <string name="lunch">Lunch</string>
     <string name="dinner">Dinner</string>
     <string name="snacks">Snacks</string>
+    <string name="total_calories">Total Calories:</string>
     <string-array name="time_entries">
         <item>15 min</item>
         <item>30 min</item>
         <item>45 min</item>
         <item>1 hr</item>
     </string-array>
+    <string name="search_hint">Search for food name</string>
+    <string name="title_activity_search_results">activity search results</string>
 </resources>

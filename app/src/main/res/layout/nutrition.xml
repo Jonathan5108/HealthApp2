@@ -33,11 +33,23 @@
 
             <SearchView
                 android:id="@+id/editSearch"
-                android:layout_width="200dp"
+                android:layout_width="fill_parent"
                 android:layout_height="60dp"
                 android:layout_marginStart="20dp"
                 android:layout_below="@+id/textView"
-                android:text="@string/search" />
+                android:text="@string/search"
+                android:showAsAction="collapseActionView|ifRoom"
+                android:actionViewClass="androidx.appcompat.widget.SearchView"
+                android:icon="@drawable/ic_search"/>
+                <requestFocus />
+
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/editSearch"
+                tools:ignore="NestedScrolling" />
+
 
             <TextView
                 android:id="@+id/servingView"
@@ -59,7 +71,6 @@
                 android:text="@string/amount"
                 android:scrollbars="vertical"/>
 
-
             <TextView
                 android:id="@+id/mealView"
                 android:layout_width="100dp"
@@ -70,6 +81,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_below="@id/servingView" />
+
     <!--
             <EditText
                 android:id="@+id/editMeal"
@@ -79,6 +91,7 @@
                 android:layout_toEndOf="@+id/mealView"
                 android:text="@string/select" />
     -->
+
             <Spinner
                 android:id="@+id/spinnerMeal"
                 android:layout_width="wrap_content"
@@ -92,12 +105,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/mealView"
-                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
+                android:textSize="28sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:text="@string/log_item" />
-
 
             <TextView
                 android:id="@+id/textView2"
@@ -107,9 +120,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:text="@string/todays_items"
-                android:textSize="20sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
-
 
             <Button
                 android:id="@+id/plan"
@@ -118,6 +130,7 @@
                 android:layout_below="@id/add"
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@+id/textView2"
+                android:textSize="18sp"
                 android:text="@string/my_plan" />
 
             <TextView
@@ -197,11 +210,15 @@
                 android:layout_marginTop="10dp"
                 android:scrollbars="vertical" />
 
-
-
-            <!--
-            spinner needs
-            -->
+            <TextView
+                android:id="@+id/textTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/listSnack"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="40dp"
+                android:text="@string/total_calories"
+                android:textStyle="bold"/>
 
         </RelativeLayout>
     </ScrollView>

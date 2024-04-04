@@ -41,31 +41,6 @@ class NutritionFragment : Fragment(), SearchView.OnCloseListener {
         )
 
         //code for search bar
-        // Generate sample data
-        animalNameList = arrayOf(
-            "Lion", "Tiger", "Dog",
-            "Cat", "Tortoise", "Rat", "Elephant", "Fox",
-            "Cow", "Donkey", "Monkey"
-        )
-
-        // Locate the ListView in listview_main.xml
-        list = view.findViewById(R.id.listview)
-
-        for (i in animalNameList.indices) {
-            val animalNames = AnimalNames(animalNameList[i])
-            // Binds all strings into an array
-            arraylist.add(animalNames)
-        }
-
-        // Pass results to ListViewAdapter Class
-        adapter = ListViewAdapter(this, arraylist)
-
-        // Binds the Adapter to the ListView
-        list.adapter = adapter
-
-        // Locate the EditText in listview_main.xml
-        editsearch = view.findViewById(R.id.search)
-        editsearch.setOnQueryTextListener(this)
 
 
         // code for dropdown menu

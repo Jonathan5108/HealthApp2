@@ -34,4 +34,5 @@
     </string-array>
     <string name="search_hint">Search for food name</string>
     <string name="title_activity_search_results">activity search results</string>
+    <string name="title">Title</string>
 </resources>

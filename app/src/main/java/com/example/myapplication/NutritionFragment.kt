@@ -21,26 +21,52 @@ import androidx.fragment.app.Fragment
 import android.support.v4.view.MenuItemCompat
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 
 
 class NutritionFragment : Fragment(), SearchView.OnCloseListener {
 
     // Declare Variables
-    private lateinit var list: ListView
-    private lateinit var adapter: ListViewAdapter
-    private lateinit var editsearch: SearchView
-    private lateinit var animalNameList: Array<String>
-    private val arraylist = ArrayList<AnimalNames>()
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var dataList: ArrayList<DataClass>
+    lateinit var imageList: Array<Int>
+    lateinit var titleList: Array<String>
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+
+        //might need to go into main activity
+        imageList = arrayOf(
+            R.drawable.baseline_food,
+            R.drawable.baseline_local_drink_24)
+
+        titleList = arrayOf(
+            "Apple",
+            "Coffee")
+
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
+
+        dataList = arrayListOf<DataClass>()
+        getData()
+
 
     ): View {
         val view = inflater.inflate(
             R.layout.nutrition, container, false
         )
 
-        //code for search bar
+        //code for recycler view for search bar
+        fun getData(){
+            for (i in imageList.indices){
+                val dataClass = DataClass(imageList[i],titleList[i])
+                dataList.add(dataClass)
+            }
+            recyclerView.adapter = AdapterClass(dataList)
+        }
 
 
         // code for dropdown menu
@@ -63,6 +89,10 @@ class NutritionFragment : Fragment(), SearchView.OnCloseListener {
         val text = newText
         adapter.filter(text)
         return false
+    }
+
+    override fun onClose(): Boolean {
+        TODO("Not yet implemented")
     }
 }
 

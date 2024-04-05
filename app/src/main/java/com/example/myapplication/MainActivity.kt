@@ -13,8 +13,12 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
 import android.widget.LinearLayout
+import android.widget.SearchView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
+import java.util.Locale
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +27,8 @@ class MainActivity : AppCompatActivity() {
     private var progress_bar : ProgressBar? = null
     private var progress_bar2 : ProgressBar? = null
     private var tv_progress :TextView?= null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,8 +45,8 @@ class MainActivity : AppCompatActivity() {
         setupViewPager(tabViewpager)
         tab_tablayout.setupWithViewPager(tabViewpager)
 
-
     }
+
 
     private fun updateProgressBar1() {
         progress_bar!!.progress = progr
@@ -66,14 +72,16 @@ class MainActivity : AppCompatActivity() {
         viewpager.adapter = adapter
     }
 
-    class ViewPagerAdapter// this is a secondary constructor of ViewPagerAdapter class.
-    public constructor(supportFragmentManager: FragmentManager) :
-        FragmentPagerAdapter(supportFragmentManager) {
+    class ViewPagerAdapter : FragmentPagerAdapter {
 
         // objects of arraylist. One is of Fragment type and
         // another one is of String type.*/
         private final var fragmentList1: ArrayList<Fragment> = ArrayList()
         private final var fragmentTitleList1: ArrayList<String> = ArrayList()
+
+        // this is a secondary constructor of ViewPagerAdapter class.
+        public constructor(supportFragmentManager: FragmentManager)
+                : super(supportFragmentManager)
 
         // returns which item is selected from arraylist of fragments.
         override fun getItem(position: Int): Fragment {
@@ -97,6 +105,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 
 
 }

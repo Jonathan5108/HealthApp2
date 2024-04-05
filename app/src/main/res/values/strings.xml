@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">myapplication</string>
-    <string name="search">search</string>
     <string name="servings">Servings</string>
     <string name="enter_food_item">Enter food item:</string>
     <string name="add">add</string>
@@ -15,6 +14,12 @@
         <item>Lunch</item>
         <item>Dinner</item>
         <item>Snack</item>
+    </string-array>
+    <string-array name="servings_dropdown">
+        <item>Cup</item>
+        <item>Ib</item>
+        <item>Oz</item>
+        <item>Gram</item>
     </string-array>
     <string name="enter_exercise">Enter exercise:</string>
     <string name="time">Time (minutes)</string>
@@ -32,7 +37,9 @@
         <item>45 min</item>
         <item>1 hr</item>
     </string-array>
-    <string name="search_hint">Search for food name</string>
+    <string name="search_hint">Search food or drink</string>
     <string name="title_activity_search_results">activity search results</string>
     <string name="title">Title</string>
+    <string name="item_successfully_logged">item successfully logged</string>
+    <string name = "search">Search </string>
 </resources>

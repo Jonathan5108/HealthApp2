@@ -20,6 +20,7 @@
         <item>Ib</item>
         <item>Oz</item>
         <item>Gram</item>
+        <item>Piece</item>
     </string-array>
     <string name="enter_exercise">Enter exercise:</string>
     <string name="time">Time (minutes)</string>

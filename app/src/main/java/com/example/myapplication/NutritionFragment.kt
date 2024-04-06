@@ -40,6 +40,13 @@ class NutritionFragment : Fragment() {
     private lateinit var searchView: SearchView
     private lateinit var searchList: ArrayList<DataClass>
 
+    //recycler list items
+    //private lateinit var editTextNewItem: EditText
+    private lateinit var listViewItems: ListView
+    private lateinit var itemsAdapter: ArrayAdapter<String>
+    private val breakfastItems = ArrayList<String>()
+
+
     @SuppressLint("InflateParams")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -48,14 +55,6 @@ class NutritionFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.nutrition, container, false)
 
-
-
-        //code for search popup window
-        val popupButton = view.findViewById<Button>(R.id.editSearch)
-        popupButton.setOnClickListener {
-            val popUpClass = PopUpClass()
-            popUpClass.showPopupWindow(it)
-        }
 
         //val bttnPopUp: ImageButton = view.findViewById<ImageButton>(R.id.editSearch)
 //        bttnPopUp.setOnClickerListener{
@@ -69,6 +68,14 @@ class NutritionFragment : Fragment() {
 //            window.showAsDropDown(bttnPopUp)
 //        }
 
+        // code for servings dropdown menu
+        val spinnerServings: Spinner = view.findViewById(R.id.spinnerServing)
+        val spinnerAdapter2 = ArrayAdapter.createFromResource(
+            requireContext(), R.array.servings_dropdown, android.R.layout.simple_spinner_item
+        )
+        spinnerAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerServings.adapter = spinnerAdapter2
+
         // code for meals dropdown menu
         val spinnerMeals: Spinner = view.findViewById(R.id.spinnerMeal)
         val spinnerAdapter = ArrayAdapter.createFromResource(
@@ -77,13 +84,12 @@ class NutritionFragment : Fragment() {
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerMeals.adapter = spinnerAdapter
 
-        // code for servings dropdown menu
-        val spinnerServings: Spinner = view.findViewById(R.id.spinnerServing)
-        val spinnerAdapter2 = ArrayAdapter.createFromResource(
-            requireContext(), R.array.servings_dropdown, android.R.layout.simple_spinner_item
-        )
-        spinnerAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerServings.adapter = spinnerAdapter2
+        //code for search popup window
+        val popupButton = view.findViewById<Button>(R.id.editSearch)
+        popupButton.setOnClickListener {
+            val popUpClass = PopUpClass()
+            popUpClass.showPopupWindow(it)
+        }
 
         //code for searching
         val sView = inflater.inflate(R.layout.search_popup, container, false)
@@ -140,9 +146,53 @@ class NutritionFragment : Fragment() {
 
         })
 
+        //code for recyclers
+
+        //breakfast
+        //editTextNewItem = sView.findViewById(R.id.searchView)
+        listViewItems = view.findViewById(R.id.listBreakfast)
+        itemsAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, breakfastItems)
+        listViewItems.adapter = itemsAdapter
+        view.findViewById<Button>(R.id.add).setOnClickListener {
+            addNewItemBreakfast()
+        }
+        listViewItems.setOnItemClickListener { _, _, position, _ ->
+            val currentItem = breakfastItems[position]
+            if(!currentItem.endsWith(" ✔")) {
+                breakfastItems[position] = breakfastItems[position] + " ✔"
+            } else {
+                breakfastItems[position] = currentItem.removeSuffix(" ✔")
+            }
+            itemsAdapter.notifyDataSetChanged()
+        }
+        listViewItems.setOnItemLongClickListener { _, _, position, _ ->
+            breakfastItems.removeAt(position)
+            itemsAdapter.notifyDataSetChanged()
+            true
+        }
+
+        //code for search popup window
+        val popupButton2 = view.findViewById<Button>(R.id.plan)
+        popupButton2.setOnClickListener {
+            val popUpClass = PopUpClass2()
+            popUpClass.showPopupWindow(it)
+        }
+
         return view
     }
 
+
+    // code for breakfast recycler list
+    private fun addNewItemBreakfast() {
+        //val newItem = editTextNewItem.text.toString()
+        val newItem = searchList[0].toString()
+        if (newItem.isNotBlank()) {
+            breakfastItems.add(newItem)
+            itemsAdapter.notifyDataSetChanged()
+            //editTextNewItem.text.clear()
+            searchList.clear()
+        }
+    }
 
     //code for recycler view for search bar
     private fun getData(){

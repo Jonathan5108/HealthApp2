@@ -44,4 +44,6 @@
     <string name="item_successfully_logged">item successfully logged</string>
     <string name = "search">Search </string>
     <string name="no_goal">no goal has been set</string>
+    <string name="day">DAY</string>
+    <string name="week">WEEK</string>
 </resources>

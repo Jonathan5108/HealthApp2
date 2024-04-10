@@ -5,6 +5,7 @@ import android.app.SearchManager
 import android.content.ComponentName
 import android.content.Context
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -20,6 +21,7 @@ import android.widget.Button
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.RelativeLayout
@@ -31,13 +33,13 @@ import androidx.recyclerview.widget.RecyclerView
 import java.util.Locale
 
 
-class NutritionFragment : Fragment() {
+class NutritionFragment: Fragment() {
     //vars for nutrition page
-    private lateinit var recyclerView: RecyclerView
+    lateinit var recyclerView: RecyclerView
     private lateinit var dataList: ArrayList<DataClass>
     lateinit var imageList: Array<Int>
     lateinit var titleList: Array<String>
-    private lateinit var searchView: SearchView
+    lateinit var searchView: SearchView
     private lateinit var searchList: ArrayList<DataClass>
 
     //recycler list items
@@ -46,8 +48,6 @@ class NutritionFragment : Fragment() {
     private lateinit var itemsAdapter: ArrayAdapter<String>
     private val breakfastItems = ArrayList<String>()
 
-
-    @SuppressLint("InflateParams")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
 
@@ -55,18 +55,24 @@ class NutritionFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.nutrition, container, false)
 
+        //code for search popup window
+        val buttonSearch = view.findViewById<ImageButton>(R.id.editSearch)
+        buttonSearch.setOnClickListener {
+            val width = ConstraintLayout.LayoutParams.MATCH_PARENT
+            val height = ConstraintLayout.LayoutParams.MATCH_PARENT
+            val focusable = true
 
-        //val bttnPopUp: ImageButton = view.findViewById<ImageButton>(R.id.editSearch)
-//        bttnPopUp.setOnClickerListener{
-//            val window = PopupWindow(this)
-//            val viewPopup = layoutInflater.inflate(R.layout.search_popup, null)
-//            window.contentView = viewPopup
-//            val bttn = view.findViewById<ImageButton>(R.id.editSearch)
-//            bttn.setOnClickListener {
-//                window.dismiss()
-//            }
-//            window.showAsDropDown(bttnPopUp)
-//        }
+            val window = PopupWindow(view,width, height, focusable)
+
+            val viewSearch = layoutInflater.inflate(R.layout.search_popup, null)
+            window.contentView = viewSearch
+
+            val imageView = viewSearch.findViewById<ImageView>(R.id.close)
+            imageView.setOnClickListener {
+                window.dismiss()
+            }
+            window.showAtLocation(view, Gravity.CENTER, 0, 0)
+        }
 
         // code for servings dropdown menu
         val spinnerServings: Spinner = view.findViewById(R.id.spinnerServing)
@@ -84,15 +90,28 @@ class NutritionFragment : Fragment() {
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerMeals.adapter = spinnerAdapter
 
-        //code for search popup window
-        val popupButton = view.findViewById<Button>(R.id.editSearch)
-        popupButton.setOnClickListener {
-            val popUpClass = PopUpClass()
-            popUpClass.showPopupWindow(it)
+        //code for "my nutrition plan" popup window
+        val buttonPlan = view.findViewById<Button>(R.id.plan)
+        buttonPlan.setOnClickListener {
+            val width = ConstraintLayout.LayoutParams.MATCH_PARENT
+            val height = ConstraintLayout.LayoutParams.MATCH_PARENT
+            val focusable = true
+
+            val window = PopupWindow(view,width, height, focusable)
+
+            val viewPlan = layoutInflater.inflate(R.layout.nutrion_plan_popup, null)
+            window.contentView = viewPlan
+
+            val imageView = viewPlan.findViewById<ImageView>(R.id.close)
+            imageView.setOnClickListener {
+                window.dismiss()
+            }
+            window.showAtLocation(view, Gravity.CENTER, 0, 0)
         }
 
         //code for searching
         val sView = inflater.inflate(R.layout.search_popup, container, false)
+
         imageList = arrayOf(
             R.drawable.baseline_food,
             R.drawable.baseline_local_drink_24,
@@ -107,15 +126,19 @@ class NutritionFragment : Fragment() {
             "Egg                78 cals/serving",
             "Chicken Breast    231 cals/serving",
             "Chicken Thigh      206 cals/serving",
-            "Rice (Basmati)     210 cals/serving",)
+            "Rice (Basmati)     210 cals/serving")
 
-        recyclerView = sView.findViewById(R.id.recyclerView)
-        searchView = sView.findViewById(R.id.editSearch)
+        with (sView) {
+            recyclerView = findViewById(R.id.recyclerView)
+            searchView = findViewById(R.id.editSearch)
+        }
+
+
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.setHasFixedSize(true)
 
-        dataList = arrayListOf<DataClass>()
-        searchList = arrayListOf<DataClass>()
+        dataList = arrayListOf()
+        searchList = arrayListOf()
         getData()
 
         searchView.clearFocus()
@@ -146,8 +169,6 @@ class NutritionFragment : Fragment() {
 
         })
 
-        //code for recyclers
-
         //breakfast
         //editTextNewItem = sView.findViewById(R.id.searchView)
         listViewItems = view.findViewById(R.id.listBreakfast)
@@ -171,26 +192,23 @@ class NutritionFragment : Fragment() {
             true
         }
 
-        //code for search popup window
-        val popupButton2 = view.findViewById<Button>(R.id.plan)
-        popupButton2.setOnClickListener {
-            val popUpClass = PopUpClass2()
-            popUpClass.showPopupWindow(it)
-        }
-
         return view
     }
 
 
-    // code for breakfast recycler list
-    private fun addNewItemBreakfast() {
-        //val newItem = editTextNewItem.text.toString()
-        val newItem = searchList[0].toString()
-        if (newItem.isNotBlank()) {
-            breakfastItems.add(newItem)
-            itemsAdapter.notifyDataSetChanged()
-            //editTextNewItem.text.clear()
-            searchList.clear()
+    //code for "log item" message
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val logButton = view.findViewById<Button>(R.id.add)
+        val linearLayout = view.findViewById<LinearLayout>(R.id.linlayout)
+        val notif = view.findViewById<TextView>(R.id.notif)
+
+        logButton.setOnClickListener {
+            linearLayout.visibility = View.VISIBLE
+        }
+
+        notif.setOnClickListener {
+            linearLayout.visibility = View.INVISIBLE
         }
     }
 
@@ -204,19 +222,15 @@ class NutritionFragment : Fragment() {
         recyclerView.adapter = AdapterClass(searchList)
     }
 
-    //code for "log item" message
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val logButton = view.findViewById<ImageButton>(R.id.add)
-        val linearLayout = view.findViewById<LinearLayout>(R.id.linlayout)
-        val notif = view.findViewById<TextView>(R.id.notif)
-
-        logButton.setOnClickListener {
-            linearLayout.visibility = View.VISIBLE
-        }
-
-        notif.setOnClickListener {
-            linearLayout.visibility = View.INVISIBLE
+    // code for breakfast recycler list
+    private fun addNewItemBreakfast() {
+        //val newItem = editTextNewItem.text.toString()
+        val newItem = searchList[0].toString()
+        if (newItem.isNotBlank()) {
+            breakfastItems.add(newItem)
+            itemsAdapter.notifyDataSetChanged()
+            //editTextNewItem.text.clear()
+            searchList.clear()
         }
     }
 

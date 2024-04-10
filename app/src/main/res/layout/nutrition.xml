@@ -19,9 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            tools:context=".NutritionFragment"
-            tools:layout_editor_absoluteX="65dp"
-            tools:layout_editor_absoluteY="0dp">
+            tools:context=".MainActivity">
 
             <TextView
                 android:id="@+id/textView"
@@ -30,6 +28,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginStart="20dp"
                 android:text="@string/enter_food_item"
+                android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -54,6 +53,7 @@
                 android:gravity="center_vertical"
                 android:layout_below="@+id/editSearch"
                 android:text="@string/servings"
+                android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -68,7 +68,7 @@
 
             <Spinner
                 android:id="@+id/spinnerServing"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@+id/editSearch"
                 android:layout_toEndOf="@+id/editServing"
@@ -82,23 +82,24 @@
                 android:layout_marginStart="20dp"
                 android:gravity="center_vertical"
                 android:text="@string/meal"
+                android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 android:layout_below="@id/servingView" />
 
-    <!--
-            <EditText
-                android:id="@+id/editMeal"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_below="@+id/editServing"
-                android:layout_toEndOf="@+id/mealView"
-                android:text="@string/select" />
-    -->
+            <!--
+                    <EditText
+                        android:id="@+id/editMeal"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/editServing"
+                        android:layout_toEndOf="@+id/mealView"
+                        android:text="@string/select" />
+            -->
 
             <Spinner
                 android:id="@+id/spinnerMeal"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@+id/editServing"
                 android:layout_toEndOf="@+id/mealView"
@@ -115,29 +116,10 @@
                 android:textSize="28sp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="@string/log_item" />
+                android:text="@string/log_item"
+                android:textColor="@color/black"
+                android:background="@color/colorAccent6" />
 
-
-            <LinearLayout
-                android:id="@+id/linlayout"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_below="@id/add"
-                android:background="@android:color/holo_red_light"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="invisible">
-
-                <TextView
-                    android:id="@+id/notif"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/item_successfully_logged"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-             </LinearLayout>
 
             <TextView
                 android:id="@+id/textView2"
@@ -146,6 +128,7 @@
                 android:layout_below="@+id/linlayout"
                 android:layout_marginStart="20dp"
                 android:text="@string/todays_items"
+                android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -156,7 +139,9 @@
                 android:layout_below="@id/linlayout"
                 android:layout_toEndOf="@+id/textView2"
                 android:textSize="18sp"
-                android:text="@string/my_plan" />
+                android:text="@string/my_plan"
+                android:textColor="@color/black"
+                android:background="@color/colorAccent6"/>
 
             <TextView
                 android:id="@+id/textBreakfast"
@@ -167,6 +152,7 @@
                 android:layout_marginStart="40dp"
                 android:text="@string/breakfast"
                 android:textSize= "18sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"/>
 
             <ListView
@@ -176,7 +162,8 @@
                 android:layout_below="@+id/textBreakfast"
                 android:layout_marginStart="60dp"
                 android:layout_marginTop="10dp"
-                android:scrollbars="vertical" />
+                android:scrollbars="vertical"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/textLunch"
@@ -186,6 +173,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="40dp"
                 android:text="@string/lunch"
+                android:textColor="@color/black"
                 android:textSize = "18sp"
                 android:textStyle="bold"/>
 
@@ -196,7 +184,8 @@
                 android:layout_below="@+id/textLunch"
                 android:layout_marginStart="60dp"
                 android:layout_marginTop="10dp"
-                android:scrollbars="vertical" />
+                android:scrollbars="vertical"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/textDinner"
@@ -207,6 +196,7 @@
                 android:layout_marginStart="40dp"
                 android:text="@string/dinner"
                 android:textSize = "18sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"/>
 
             <ListView
@@ -216,7 +206,8 @@
                 android:layout_below="@+id/textDinner"
                 android:layout_marginStart="60dp"
                 android:layout_marginTop="10dp"
-                android:scrollbars="vertical" />
+                android:scrollbars="vertical"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/textSnacks"
@@ -226,10 +217,12 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="40dp"
                 android:text="@string/snacks"
+                android:textColor="@color/black"
+                android:textSize="18sp"
                 android:textStyle="bold"/>
 
 
-            <androidx.recyclerview.widget.RecyclerView
+            <ListView
                 android:id="@+id/listSnack"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -248,6 +241,31 @@
                 android:text="@string/total_calories"
                 android:textStyle="bold"/>
 
+            <LinearLayout
+                android:id="@+id/linlayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/add"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                android:layout_marginBottom="5dp">
+
+
+                <TextView
+                    android:id="@+id/notif"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center"
+                    android:text="@string/item_successfully_logged"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </RelativeLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

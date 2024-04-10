@@ -6,4 +6,11 @@
     <color name="colorEnd1">#0000FF</color>
     <color name="colorAccent2">#FB02B5</color>
     <color name="colorEnd2">#FD020A</color>
+    <color name="colorPrimary">#CCCCCC</color>
+    <color name="colorPrimaryDark">#003366</color>
+    <color name="colorAccent6">#5680E9</color>
+    <color name="colorAccent7">#84CEEB</color>
+    <color name="colorAccent3">#FB02B5</color>
+    <color name="colorAccent4">#5AB9EA</color>
+    <color name="colorAccent5">#8860D0</color>
 </resources>

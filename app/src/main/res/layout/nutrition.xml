@@ -43,7 +43,8 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="15dp"
                 android:background="@color/white"
-                android:src="@drawable/ic_search" />
+                android:src="@drawable/ic_search"
+                android:backgroundTint="@color/colorAccent6"/>
 
             <TextView
                 android:id="@+id/servingView"

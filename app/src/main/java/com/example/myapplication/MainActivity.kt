@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         adapter.addFragment(ProgressFragment(), "Progress")
 
         // setting adapter to view pager.
-        viewpager.setAdapter(adapter)
+        viewpager.adapter = adapter
     }
 
     class ViewPagerAdapter// this is a secondary constructor of ViewPagerAdapter class.

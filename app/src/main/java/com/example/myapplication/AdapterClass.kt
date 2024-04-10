@@ -30,7 +30,6 @@ class AdapterClass(private val dataList: ArrayList<DataClass>) : RecyclerView.Ad
         val rvImage: ImageView = itemView.findViewById(androidx.appcompat.R.id.image)
         val rvTitle: TextView = itemView.findViewById(R.id.title)
 
-
     }
 }
 

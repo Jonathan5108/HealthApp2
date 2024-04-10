@@ -141,6 +141,10 @@ class NutritionFragment: Fragment() {
         searchList = arrayListOf()
         getData()
 
+//**** left to do:
+//        -get recycler view in pop up working
+//        - get recycler view to breakfasttiems list to work
+
         searchView.clearFocus()
         searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -171,26 +175,26 @@ class NutritionFragment: Fragment() {
 
         //breakfast
         //editTextNewItem = sView.findViewById(R.id.searchView)
-        listViewItems = view.findViewById(R.id.listBreakfast)
-        itemsAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, breakfastItems)
-        listViewItems.adapter = itemsAdapter
-        view.findViewById<Button>(R.id.add).setOnClickListener {
-            addNewItemBreakfast()
-        }
-        listViewItems.setOnItemClickListener { _, _, position, _ ->
-            val currentItem = breakfastItems[position]
-            if(!currentItem.endsWith(" ✔")) {
-                breakfastItems[position] = breakfastItems[position] + " ✔"
-            } else {
-                breakfastItems[position] = currentItem.removeSuffix(" ✔")
-            }
-            itemsAdapter.notifyDataSetChanged()
-        }
-        listViewItems.setOnItemLongClickListener { _, _, position, _ ->
-            breakfastItems.removeAt(position)
-            itemsAdapter.notifyDataSetChanged()
-            true
-        }
+//        listViewItems = view.findViewById(R.id.listBreakfast)
+//        itemsAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, breakfastItems)
+//        listViewItems.adapter = itemsAdapter
+//        view.findViewById<Button>(R.id.add).setOnClickListener {
+//            addNewItemBreakfast()
+//        }
+//        listViewItems.setOnItemClickListener { _, _, position, _ ->
+//            val currentItem = breakfastItems[position]
+//            if(!currentItem.endsWith(" ✔")) {
+//                breakfastItems[position] = breakfastItems[position] + " ✔"
+//            } else {
+//                breakfastItems[position] = currentItem.removeSuffix(" ✔")
+//            }
+//            itemsAdapter.notifyDataSetChanged()
+//        }
+//        listViewItems.setOnItemLongClickListener { _, _, position, _ ->
+//            breakfastItems.removeAt(position)
+//            itemsAdapter.notifyDataSetChanged()
+//            true
+//        }
 
         return view
     }
@@ -223,16 +227,16 @@ class NutritionFragment: Fragment() {
     }
 
     // code for breakfast recycler list
-    private fun addNewItemBreakfast() {
-        //val newItem = editTextNewItem.text.toString()
-        val newItem = searchList[0].toString()
-        if (newItem.isNotBlank()) {
-            breakfastItems.add(newItem)
-            itemsAdapter.notifyDataSetChanged()
-            //editTextNewItem.text.clear()
-            searchList.clear()
-        }
-    }
+//    private fun addNewItemBreakfast() {
+//        //val newItem = editTextNewItem.text.toString()
+//        val newItem = searchList[0].toString()
+//        if (newItem.isNotBlank()) {
+//            breakfastItems.add(newItem)
+//            itemsAdapter.notifyDataSetChanged()
+//            //editTextNewItem.text.clear()
+//            searchList.clear()
+//        }
+//    }
 
 
 }

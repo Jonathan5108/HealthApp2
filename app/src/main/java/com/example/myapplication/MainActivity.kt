@@ -63,8 +63,8 @@ class MainActivity : AppCompatActivity() {
 
         // TextFragment is the name of Fragment and the text
         // is a title of tab
-        adapter.addFragment(NutritionFragment(), "Nutrition")
         adapter.addFragment(HomeFragment(), "Home")
+        adapter.addFragment(NutritionFragment(), "Nutrition")
         adapter.addFragment(ExerciseFragment(), "Exercise")
         adapter.addFragment(ProgressFragment(), "Progress")
 
